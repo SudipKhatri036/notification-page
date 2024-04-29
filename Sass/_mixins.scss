@@ -1,0 +1,13 @@
+@mixin flexed($align: center, $justify: space-between) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin transitionEffect {
+  transition: all 0.3s ease;
+}
+@mixin hoverEffect {
+  color: $primary-blue;
+  cursor: pointer;
+}

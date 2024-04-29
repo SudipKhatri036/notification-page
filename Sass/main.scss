@@ -1,0 +1,187 @@
+@import "variables";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: $main-font;
+  background-color: $very-light-grayishblue;
+}
+
+#main-container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: -1px 7px 20px 0px rgba(0, 0, 0, 0.35);
+}
+
+header {
+  width: 100%;
+  @include flexed(center, space-between);
+
+  h1 {
+    font-size: 1.2rem;
+    color: $font-dark-blue;
+
+    #count {
+      padding: 0 0.4rem;
+      border-radius: 6px;
+      background-color: $primary-blue;
+      color: white;
+      font-size: 1.1rem;
+    }
+  }
+
+  #mark-read {
+    background-color: transparent;
+    border: none;
+    color: $dark-greyish;
+    cursor: pointer;
+    font-weight: 600;
+    @include transitionEffect;
+    &:hover {
+      @include hoverEffect;
+    }
+  }
+}
+
+main {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.notification-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  img {
+    max-width: 50px;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 0.2rem;
+    color: $grayish-blue;
+    font-weight: 500;
+    @include transitionEffect;
+    .profile-text {
+      font-weight: 900;
+      margin-right: 0.2rem;
+      color: $font-dark-blue;
+      &:hover {
+        @include hoverEffect;
+      }
+    }
+
+    .post-text {
+      font-weight: 900;
+      color: $dark-greyish;
+      margin-right: 0.3rem;
+      &:hover {
+        @include hoverEffect;
+      }
+    }
+
+    .red-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $primary-red;
+      display: inline-block;
+      margin-right: 0.3rem;
+    }
+  }
+
+  .notification-time {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $grayish-blue;
+  }
+
+  .text-msg {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    color: $dark-greyish;
+    font-weight: 600;
+    border: 1px solid $grayish-blue;
+    margin-top: 0.5rem;
+    border-radius: 6px;
+    @include transitionEffect;
+
+    &:hover {
+      background-color: $light-grayishblue1;
+      cursor: pointer;
+    }
+  }
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.flex-item {
+  @include flexed(center, space-between);
+  width: 100%;
+}
+
+.active {
+  background-color: $very-light-grayishblue;
+}
+
+.attribution {
+  margin-top: 4rem;
+  padding: 1rem;
+  font-size: 11px;
+  background-color: $primary-blue;
+  color: white;
+  text-align: center;
+
+  a {
+    color: $primary-red;
+  }
+}
+
+// Media Query Starts
+@media screen and (max-width: 650px) {
+  #main-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #main-container {
+    width: 95%;
+  }
+  header {
+    h1 {
+      font-size: 0.9rem;
+
+      #mark-read {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .notification-card {
+    h2 {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+// Media Query Ends

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: jakartaSans;
+  src: url("/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+$main-font: jakartaSans, sans-serif;
+$primary-red: hsl(1, 90%, 64%);
+$primary-blue: hsl(219, 85%, 26%);
+$font-dark-blue: hsl(224, 21%, 14%);
+$dark-greyish: hsl(219, 12%, 42%);
+$grayish-blue: hsl(219, 14%, 63%);
+$light-grayishblue1: hsla(211, 68%, 94%, 0.705);
+$light-grayishblue2: hsl(205, 33%, 90%);
+$very-light-grayishblue: hsl(210deg 89.8% 97.08%);
